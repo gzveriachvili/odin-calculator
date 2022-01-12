@@ -76,7 +76,7 @@ function getOperation() {
 
           let res = operate(array, operator);
           let resFixed = Number(res).toFixed(2);
-          screenMiddle.textContent = `RESULT: ${resFixed}`;
+          screenMiddle.textContent = `Total: ${resFixed}`;
 
           screenTop.textContent = '';
           num1 = '';
