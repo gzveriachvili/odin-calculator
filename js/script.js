@@ -67,7 +67,7 @@ function getOperation() {
         num2 = num1;
         array.push(Number(num2));
         let res = operate(array, operator);
-        let resFixed = Number(res).toFixed(2);
+        let resFixed = Number(res);
         console.log('Num1: ', num1);
         if (operator !== '=') {
           screenTop.textContent = `${operator} | ${resFixed}`;
@@ -75,7 +75,7 @@ function getOperation() {
           operator = opMem;
 
           let res = operate(array, operator);
-          let resFixed = Number(res).toFixed(2);
+          let resFixed = Number(res);
           screenMiddle.textContent = `Total: ${resFixed}`;
 
           screenTop.textContent = '';
@@ -142,7 +142,7 @@ function operate(array, operator) {
 
 function clearAll() {
   screenTop.textContent = '';
-  screenMiddle.textContent = '0.00';
+  screenMiddle.textContent = '0';
   num1 = '';
   num2 = '';
   temp = '';
@@ -173,8 +173,19 @@ function backSpaceButtonPress() {
           num1 = '0';
           screenMiddle.textContent = num1;
         }
+      }
+    });
+  }
+}
 
-        console.log(num1);
+function addFloat() {
+  for (const button of container) {
+    button.addEventListener('click', () => {
+      if (button.classList.contains('float')) {
+        if (!num1.includes('.')) {
+          num1 = num1 + '.';
+          screenMiddle.textContent = num1;
+        }
       }
     });
   }
@@ -189,6 +200,7 @@ function main() {
   getOperation();
   clearButtonPress();
   backSpaceButtonPress();
+  addFloat();
 }
 
 main();
