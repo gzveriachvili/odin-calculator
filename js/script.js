@@ -167,8 +167,10 @@ function backSpaceButtonPress() {
     button.addEventListener('click', () => {
       if (button.classList.contains('backspace')) {
         console.log('backspace: ', button.textContent);
-        if (num1.length > 1) {
-          num1 = num1.substring(0, num1.length - 1);
+        num1 = num1.substring(0, num1.length - 1);
+        screenMiddle.textContent = num1;
+        if (num1.length <= 0) {
+          num1 = '0';
           screenMiddle.textContent = num1;
         }
 
