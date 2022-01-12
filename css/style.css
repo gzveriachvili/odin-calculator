@@ -68,6 +68,16 @@ body {
   align-items: center;
 }
 
+.error {
+  animation: mymove 2s 1;
+}
+
+@keyframes mymove {
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
 .footer {
   background: #fff;
   display: flex;
@@ -94,12 +104,24 @@ body {
   height: 100px;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   -webkit-box-shadow: inset 1px 3px 15px 3px rgba(0, 0, 0, 0.57);
   box-shadow: inset 1px 3px 15px 3px rgba(0, 0, 0, 0.57);
   font-family: 'VT323', monospace;
   color: #5b5d4f;
+  font-size: 30px;
+}
+
+.screen .top,
+.middle {
+  margin-right: 10px;
+}
+.screen .middle {
+  font-size: 40px;
+}
+.screen .top {
   font-size: 30px;
 }
 
@@ -115,6 +137,10 @@ body {
   align-items: center;
   -webkit-box-shadow: inset 8px -9px 5px -4px rgba(0, 0, 0, 0.39);
   box-shadow: inset 8px -9px 5px -4px rgba(0, 0, 0, 0.39);
+}
+
+.button-changer {
+  opacity: 0.8;
 }
 
 .orange {
